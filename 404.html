@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Server-Abschaltung</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #0073e6;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+    h1 {
+      margin: 0;
+    }
+    .container {
+      width: 90%;
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .alert {
+      background-color: #ffcc00;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-left: 5px solid #ff6600;
+    }
+    button {
+      background-color: #0073e6;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005bb5;
+    }
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      padding: 10px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Server-Abschaltung</h1>
+  <p>Wichtige Mitteilung zur Abschaltung des SilasMC Servers</p>
+</header>
+
+<div class="container">
+  <div class="alert">
+    <strong>Abschaltdatum: 1. Dezember 2024</strong>
+  </div>
+  <h2>Was bedeutet das für Sie?</h2>
+  <p>Der Service wird am 1. Dezember 2024 vollständig abgeschaltet.</p>
+  <h3>Warum wird der Service abgeschaltet?</h3>
+  <p>Die Entscheidung, den Service abzuschalten, basiert auf niedrige Login-Zahlen.</p>
+  <h3>Was müssen Sie tun?</h3>
+  <p>Sie können erstmal nichts tuhen. Sie können Optional am Abschalttag ein Archiv des Servers runterladen.</p>
+</div>
+
+<footer>
+  <p>Bei Fragen kontaktieren Sie uns unter error.exe@outlook.de</p>
+</footer>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const currentDate = new Date();
+    const cutoffDate = new Date('2024-12-01');
+
+    if (currentDate > cutoffDate) {
+      // Button erstellen
+      const downloadButton = document.createElement('button');
+      downloadButton.innerText = 'Download Archiv';
+      downloadButton.onclick = function() {
+        window.location.href = '/download.html';
+      };
+
+      // Button in den Footer einfügen
+      const footer = document.querySelector('footer');
+      footer.insertAdjacentElement('beforebegin', downloadButton);
+    }
+  });
+</script>
+
+</body>
+</html>
