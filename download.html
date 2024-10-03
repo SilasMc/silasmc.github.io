@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Server-Abschaltung</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #0073e6;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+    h1 {
+      margin: 0;
+    }
+    .container {
+      width: 90%;
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .alert {
+      background-color: #ffcc00;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-left: 5px solid #ff6600;
+    }
+    button {
+      background-color: #0073e6;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005bb5;
+    }
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      padding: 10px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Download Seite des Server Archivs</h1>
+</header>
+<h1>Klicken sie unten um das Archiv runterzuladen:</h1>
+<p>Hinweis: Wenn der Button nicht erscheint ist der Server noch angeschaltet, und nimmt Anfragen an.</p>
+  
+<footer>
+  <p>Bei Fragen kontaktieren Sie uns unter error.exe@outlook.de</p>
+</footer>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const currentDate = new Date();
+    const cutoffDate = new Date('2024-12-01');
+
+    if (currentDate > cutoffDate) {
+      // Button erstellen
+      const downloadButton = document.createElement('button');
+      downloadButton.innerText = 'Download Archiv';
+      downloadButton.onclick = function() {
+        window.location.href = '/https://1drv.ms/u/s!AtWR8vZxgUovgWsll2JvGoypXckb?e=adryyr';
+      };
+
+      // Button in den Footer einfügen
+      const footer = document.querySelector('footer');
+      footer.insertAdjacentElement('beforebegin', downloadButton);
+    }
+  });
+</script>
+
+</body>
+</html>
